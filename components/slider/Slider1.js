@@ -4,128 +4,63 @@ import Link from "next/link";
 
 SwiperCore.use([Navigation]);
 
-const Slider1 = () => {
-    return (
-        <>
-            <Swiper
-                breakpoints={{
-                    // when window width is >= 768px
-                    768: {
-                    width: 768,
-                    slidesPerView: 2,
-                    },
-                }}
-                slidesPerView={1}
-                spaceBetween={30}
-                navigation={{
-                    prevEl: ".custom_prev",
-                    nextEl: ".custom_next"
-                }}
-            >
-                <SwiperSlide>
-                    <div className="px-3 pb-5">
-                        <div className="card-slider group">
-                            <img className="rounded-xl" src="/assets/imgs/placeholders/img-2.jpg" alt="Monst" />
-                            <div className="flex justify-between items-end">
-                                <div>
-                                    <h1 className="mt-5 text-xl font-semibold group-hover:text-blue-500">
-                                        <Link href="/services" legacyBehavior>
-                                            <a>User growth</a>
-                                        </Link>
-                                    </h1>
-                                    <p className="mt-2 text-xs text-gray-500">Harvard university</p>
-                                </div>
-                                <div>
-                                    <Link href="/services" legacyBehavior>
-                                        <a className="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs text-blue-500 font-semibold leading-none border border-blue-200 hover:border-blue-500 hover:text-white hover:bg-blue-500 rounded">View Details</a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="px-3 pb-5">
-                        <div className="card-slider group">
-                            <img className="rounded-xl" src="/assets/imgs/placeholders/img-3.jpg" alt="Monst" />
-                            <div className="flex justify-between items-end">
-                                <div>
-                                    <h1 className="mt-5 text-xl font-semibold group-hover:text-blue-500">
-                                        <Link href="/services" legacyBehavior>
-                                            <a>Products</a>
-                                        </Link>
-                                    </h1>
-                                    <p className="mt-2 text-xs text-gray-500">Cocacola., Co</p>
-                                </div>
-                                <div>
-                                    <Link href="/services" legacyBehavior>
-                                        <a className="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs text-blue-500 font-semibold leading-none border border-blue-200 hover:border-blue-500 hover:text-white hover:bg-blue-500 rounded">View Details</a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="px-3 pb-5">
-                        <div className="card-slider group">
-                            <img className="rounded-xl" src="/assets/imgs/placeholders/img-4.jpg" alt="Monst" />
-                            <div className="flex justify-between items-end">
-                                <div>
-                                    <h1 className="mt-5 text-xl font-semibold group-hover:text-blue-500">
-                                        <Link href="/services" legacyBehavior>
-                                            <a>Event</a>
-                                        </Link>
-                                    </h1>
-                                    <p className="mt-2 text-xs text-gray-500">Oxford university</p>
-                                </div>
-                                <div>
-                                    <Link href="/services" legacyBehavior>
-                                        <a className="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs text-blue-500 font-semibold leading-none border border-blue-200 hover:border-blue-500 hover:text-white hover:bg-blue-500 rounded">View Details</a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="px-3 pb-5">
-                        <div className="card-slider group">
-                            <img className="rounded-xl" src="/assets/imgs/placeholders/img-5.jpg" alt="Monst" />
-                            <div className="flex justify-between items-end">
-                                <div>
-                                    <h1 className="mt-5 text-xl font-semibold group-hover:text-blue-500">
-                                        <Link href="/services" legacyBehavior>
-                                            <a>Shopping</a>
-                                        </Link>
-                                    </h1>
-                                    <p className="mt-2 text-xs text-gray-500">Alibaba Co</p>
-                                </div>
-                                <div>
-                                    <Link href="/services" legacyBehavior>
-                                        <a className="tracking-wide hover-up-2 mr-2 inline-block px-4 py-3 text-xs text-blue-500 font-semibold leading-none border border-blue-200 hover:border-blue-500 hover:text-white hover:bg-blue-500 rounded">View Details</a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </SwiperSlide>
-            </Swiper>
+const SlideCard = ({ img, title, sub }) => (
+  <div className="w-full max-w-[980px] pb-5">
+    <div className="card-slider group bg-white shadow rounded-2xl p-4">
+      <div className="w-full overflow-hidden rounded-xl">
+        <img src={img} alt={title} className="block w-full h-auto object-contain" />
+      </div>
+      <div className="mt-4 flex justify-between items-end">
+        <div>
+          <h3 className="text-xl font-semibold group-hover:text-blue-500 transition-colors">{title}</h3>
+          <p className="mt-1 text-sm text-blueGray-400">{sub}</p>
+        </div>
+        <Link href="/services" legacyBehavior>
+          <a className="px-4 py-2 text-sm font-semibold border border-blue-500 text-blue-500 rounded hover:bg-blue-500 hover:text-white transition">View Details</a>
+        </Link>
+      </div>
+    </div>
+  </div>
+);
 
-            <div id="carausel-2-columns-1-arrows" className="flex">
-                <span className="mr-4 text-blue-500 flex slick-arrow custom_prev">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
-                    </svg>
-                </span>
-                <span className="text-blue-500 flex slick-arrow custom_next">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                </span>
-            </div>
-        </>
-    );
+const Slider1 = () => {
+  return (
+    <div className="w-full relative">
+      <Swiper
+        slidesPerView={1}
+        navigation={{ prevEl: ".custom_prev", nextEl: ".custom_next" }}
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = ".custom_prev";
+          swiper.params.navigation.nextEl = ".custom_next";
+        }}
+      >
+        {/* ✅ 恢复为 3 张图片 */}
+        <SwiperSlide className="flex justify-end">
+          <SlideCard img="/assets/imgs/placeholders/img-10.jpg" title="User growth" sub="Harvard university" />
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-end">
+          <SlideCard img="/assets/imgs/placeholders/img-11.jpg" title="Products" sub="Cocacola Co." />
+        </SwiperSlide>
+        <SwiperSlide className="flex justify-end">
+          <SlideCard img="/assets/imgs/placeholders/img-12.jpg" title="Event" sub="Oxford university" />
+        </SwiperSlide>
+      </Swiper>
+
+      {/* ✅ 确保显示切换箭头 */}
+      <div className="flex justify-center mt-6">
+        <div className="custom_prev cursor-pointer text-blue-500 hover:text-blue-700 mx-4">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+        </div>
+        <div className="custom_next cursor-pointer text-blue-500 hover:text-blue-700 mx-4">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Slider1;
