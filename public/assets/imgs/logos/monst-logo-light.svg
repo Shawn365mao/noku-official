@@ -1,0 +1,73 @@
+<svg width="125" height="40" viewBox="0 0 125 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ringGrad" x1="8" y1="8" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00D2FF"/>
+      <stop offset="0.55" stop-color="#007AFF"/>
+      <stop offset="1" stop-color="#0033A1"/>
+    </linearGradient>
+
+    <linearGradient id="ribbonGrad" x1="10" y1="12" x2="32" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFB800"/>
+      <stop offset="0.35" stop-color="#FFE600"/>
+      <stop offset="0.62" stop-color="#3DDC97"/>
+      <stop offset="1" stop-color="#007AFF"/>
+    </linearGradient>
+
+    <linearGradient id="navyGrad" x1="14" y1="28" x2="26" y2="10" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#007AFF"/>
+      <stop offset="1" stop-color="#0033A1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 左侧 Icon（保持彩色） -->
+  <circle cx="20" cy="20" r="15.2" fill="none" stroke="url(#ringGrad)" stroke-width="3.2"/>
+
+  <path d="M14.2 14.5
+           C14.2 12.6 15.7 11.2 17.6 11.2
+           H18.8
+           C20.7 11.2 22.2 12.6 22.2 14.5
+           V28.8
+           H18.8
+           C16.0 28.8 14.2 27.1 14.2 24.7
+           Z"
+        fill="url(#navyGrad)"/>
+
+  <path d="M10.8 15.3
+           C12.7 12.0 16.8 12.0 18.7 15.3
+           L22.0 21.0
+           C22.5 21.8 23.4 21.8 23.9 21.0
+           L29.6 11.6
+           C31.3 8.8 35.0 9.2 36.0 12.1
+           C36.3 13.1 36.2 14.2 35.6 15.1
+           L27.0 28.4
+           C25.1 31.4 20.8 31.4 18.9 28.4
+           L11.2 16.8
+           C10.6 16.0 10.4 15.9 10.8 15.3
+           Z"
+        fill="url(#ribbonGrad)"/>
+
+  <!-- 右侧 Wordmark：白色 -->
+  <g fill="#FFFFFF">
+    <path d="M46 28 V12 H50.5 L58 22.2 V12 H62 V28 H57.5 L50 17.8 V28 Z"/>
+    <path d="M76 12
+             C81.2 12 85 15.6 85 20
+             C85 24.4 81.2 28 76 28
+             C70.8 28 67 24.4 67 20
+             C67 15.6 70.8 12 76 12
+             Z
+             M76 16
+             C73.4 16 71.5 17.8 71.5 20
+             C71.5 22.2 73.4 24 76 24
+             C78.6 24 80.5 22.2 80.5 20
+             C80.5 17.8 78.6 16 76 16
+             Z" fill-rule="evenodd"/>
+    <path d="M89 28 V12 H93.5 V19.3 L100.6 12 H107 L98.2 20.7 L107.6 28 H100.9 L93.5 22.1 V28 Z"/>
+    <path d="M111 12 H115.5 V22.2
+             C115.5 26.0 113.2 28 109 28
+             C104.8 28 102.5 26.0 102.5 22.2
+             V12 H107 V21.6
+             C107 23.5 107.8 24.4 109 24.4
+             C110.2 24.4 111 23.5 111 21.6
+             Z"/>
+  </g>
+</svg>
