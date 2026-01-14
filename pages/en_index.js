@@ -247,16 +247,18 @@ function Home() {
                                         <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
                                             <div className="flex-shrink-0 w-8 text-blue-500 font-bold">01</div>
                                             <p className="text-blueGray-700 font-semibold ml-2">
-                                                <strong>On WeXun:Turn work fulfillment into proof of value —
-build your professional worth through verified execution.
-                                            </p>
+                                                <strong>On WeXun:</strong>{" "}
+  Turn work fulfillment into proof of value —
+  build your professional worth through verified execution.
+</p>
                                         </div>
                                         <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
                                             <div className="flex-shrink-0 w-8 text-blue-500 font-bold">02</div>
                                             <p className="text-blueGray-700 font-semibold ml-2">
-                                                <strong>On YouBo:Turn honest transactions into reputation —
-grow your real-world credibility through trustable exchange.
-                                            </p>
+                                                <strong>On YouBo:</strong>{" "}
+  Turn honest transactions into reputation —
+  grow your real-world credibility through trustable exchange.
+</p>
                                         </div>
                                         <div className="flex items-start p-4 bg-blue-50 rounded-xl border-l-4 border-blue-500">
                                             <div className="flex-shrink-0 w-8 text-blue-500 font-bold">03</div>
