@@ -1,44 +1,51 @@
-import { useEffect, useState } from "react";
+import ScrollToTop from "react-scroll-up";
 
 export default function BackToTop() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      setVisible(window.scrollY > 300);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  if (!visible) return null;
-
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      aria-label="Back to top"
-      style={{
-        position: "fixed",
-        right: 18,
-        bottom: 18,
-        width: 44,
-        height: 44,
-        borderRadius: 9999,
-        border: "none",
-        cursor: "pointer",
-        boxShadow: "0 10px 30px rgba(0,0,0,.15)",
-        background: "#111827",
-        color: "#fff",
-        zIndex: 9999
-      }}
-    >
-      ↑
-    </button>
+    <ScrollToTop showUnder={220}>
+      <a
+        id="scrollUp"
+        aria-label="Back to top"
+        className="
+          fixed
+          right-4 bottom-4
+          sm:right-6 sm:bottom-6
+          z-[60]
+          inline-flex items-center justify-center
+          w-11 h-11
+          sm:w-12 sm:h-12
+          rounded-full
+          bg-white
+          border border-blueGray-200
+          text-blueGray-700
+          shadow-lg
+          hover:bg-blueGray-50
+          hover:text-blue-600
+          transition
+          active:scale-[0.98]
+          select-none
+        "
+        style={{
+          // ✅ iOS 安全区（刘海/底部横条）避免压住
+          bottom: "calc(env(safe-area-inset-bottom, 0px) + 16px)",
+        }}
+      >
+        <svg
+          className="w-4 h-4 sm:w-5 sm:h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </a>
+    </ScrollToTop>
   );
 }
